@@ -85,6 +85,18 @@ Fake Job Posting/
 │   ├── Fake_Job2.jpg              # Sample fake job posting
 │   ├── Real_Job1.jpg              # Sample real job posting
 │   └── Real_Job2.png              # Sample real job posting
+├── Image Folder/
+│   ├── AUC_Curve_of ADASYN_TF-IDF.png    # ROC-AUC curve for model performance
+│   ├── classimbalance.png         # Dataset class distribution visualization
+│   ├── confusion_matrix_of_optimalmodel.png # Model confusion matrix
+│   ├── data_preparation.png       # Data preprocessing workflow
+│   ├── frequency_plot_textfeatures.png # Text feature frequency analysis
+│   ├── has_logo_catplot.png       # Company logo presence analysis
+│   ├── has_question_catplot.png   # Job posting questions analysis
+│   ├── heatmap.png                # Feature correlation heatmap
+│   ├── hyperparameters.png        # Hyperparameter tuning results
+│   ├── telecommuting_catplot.png  # Remote work options analysis
+│   └── z-test.png                 # Statistical significance testing
 └── README.md                       # Project documentation
 ```
 
@@ -118,6 +130,35 @@ The detection system uses:
 The model training process is documented in the Jupyter notebooks:
 - `EDA.ipynb`: Exploratory data analysis and data visualization
 - `ModelTraining.ipynb`: Model training, evaluation, and hyperparameter tuning
+
+## 📊 Visualizations & Analysis
+
+The `Image Folder/` contains comprehensive visualizations generated during the data analysis and model training process:
+
+### Model Performance Metrics
+- **`confusion_matrix_of_optimalmodel.png`**: Shows the model's prediction accuracy across true positives, false positives, true negatives, and false negatives
+- **`AUC_Curve_of ADASYN_TF-IDF.png`**: ROC-AUC curve demonstrating the model's ability to distinguish between real and fake job postings
+
+### Data Analysis Visualizations
+- **`classimbalance.png`**: Illustrates the distribution of real vs fake job postings in the dataset
+- **`heatmap.png`**: Correlation matrix showing relationships between different features
+- **`frequency_plot_textfeatures.png`**: Analysis of text feature frequencies in job postings
+
+### Feature Analysis
+- **`has_logo_catplot.png`**: Analysis of company logo presence in real vs fake job postings
+- **`has_question_catplot.png`**: Distribution of question elements in job descriptions
+- **`telecommuting_catplot.png`**: Remote work mentions analysis across job categories
+
+### Model Development
+- **`data_preparation.png`**: Visual workflow of the data preprocessing pipeline
+- **`hyperparameters.png`**: Results from hyperparameter tuning experiments
+- **`z-test.png`**: Statistical significance testing results
+
+These visualizations provide insights into:
+- Dataset characteristics and class distribution
+- Feature importance and correlations
+- Model performance and validation metrics
+- Statistical analysis of job posting patterns
 
 ## 🚨 Fake Job Indicators
 
