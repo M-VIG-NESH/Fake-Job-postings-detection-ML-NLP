@@ -85,17 +85,12 @@ Fake Job Posting/
 │   ├── Fake_Job2.jpg              # Sample fake job posting
 │   ├── Real_Job1.jpg              # Sample real job posting
 │   └── Real_Job2.png              # Sample real job posting
-├── Image Folder/
+├── Images/
 │   ├── AUC_Curve_of ADASYN_TF-IDF.png    # ROC-AUC curve for model performance
-│   ├── classimbalance.png         # Dataset class distribution visualization
 │   ├── confusion_matrix_of_optimalmodel.png # Model confusion matrix
 │   ├── data_preparation.png       # Data preprocessing workflow
-│   ├── frequency_plot_textfeatures.png # Text feature frequency analysis
-│   ├── has_logo_catplot.png       # Company logo presence analysis
-│   ├── has_question_catplot.png   # Job posting questions analysis
 │   ├── heatmap.png                # Feature correlation heatmap
 │   ├── hyperparameters.png        # Hyperparameter tuning results
-│   ├── telecommuting_catplot.png  # Remote work options analysis
 │   └── z-test.png                 # Statistical significance testing
 └── README.md                       # Project documentation
 ```
@@ -138,29 +133,29 @@ The model training process is documented in the Jupyter notebooks:
 **Confusion Matrix**  
 Shows the model's prediction accuracy across true positives, false positives, true negatives, and false negatives:
 
-![Confusion Matrix](Image%20Folder/confusion_matrix_of_optimalmodel.png)
+![Confusion Matrix](Images/confusion_matrix_of_optimalmodel.png)
 
 **ROC-AUC Curve**  
 ROC-AUC curve demonstrating the model's ability to distinguish between real and fake job postings:
 
-![AUC Curve](Image%20Folder/AUC_Curve_of%20ADASYN_TF-IDF.png)
+![AUC Curve](Images/AUC_Curve_of%20ADASYN_TF-IDF.png)
 
 ### Model Development
 
 **Data Preparation Workflow**  
 Visual workflow of the data preprocessing pipeline:
 
-![Data Preparation](Image%20Folder/data_preparation.png)
+![Data Preparation](Images/data_preparation.png)
 
 **Hyperparameter Tuning Results**  
 Results from hyperparameter tuning experiments:
 
-![Hyperparameters](Image%20Folder/hyperparameters.png)
+![Hyperparameters](Images/hyperparameters.png)
 
 **Statistical Significance Testing**  
 Statistical significance testing results:
 
-![Z-Test Results](Image%20Folder/z-test.png)
+![Z-Test Results](Images/z-test.png)
 
 ## 🚨 Fake Job Indicators
 
