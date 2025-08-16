@@ -136,23 +136,67 @@ The model training process is documented in the Jupyter notebooks:
 The `Image Folder/` contains comprehensive visualizations generated during the data analysis and model training process:
 
 ### Model Performance Metrics
-- **`confusion_matrix_of_optimalmodel.png`**: Shows the model's prediction accuracy across true positives, false positives, true negatives, and false negatives
-- **`AUC_Curve_of ADASYN_TF-IDF.png`**: ROC-AUC curve demonstrating the model's ability to distinguish between real and fake job postings
+
+**Confusion Matrix**  
+Shows the model's prediction accuracy across true positives, false positives, true negatives, and false negatives:
+
+![Confusion Matrix](Image%20Folder/confusion_matrix_of_optimalmodel.png)
+
+**ROC-AUC Curve**  
+ROC-AUC curve demonstrating the model's ability to distinguish between real and fake job postings:
+
+![AUC Curve](Image%20Folder/AUC_Curve_of%20ADASYN_TF-IDF.png)
 
 ### Data Analysis Visualizations
-- **`classimbalance.png`**: Illustrates the distribution of real vs fake job postings in the dataset
-- **`heatmap.png`**: Correlation matrix showing relationships between different features
-- **`frequency_plot_textfeatures.png`**: Analysis of text feature frequencies in job postings
+
+**Class Distribution**  
+Illustrates the distribution of real vs fake job postings in the dataset:
+
+![Class Imbalance](Image%20Folder/classimbalance.png)
+
+**Feature Correlation Heatmap**  
+Correlation matrix showing relationships between different features:
+
+![Heatmap](Image%20Folder/heatmap.png)
+
+**Text Feature Frequency Analysis**  
+Analysis of text feature frequencies in job postings:
+
+![Frequency Plot](Image%20Folder/frequency_plot_textfeatures.png)
 
 ### Feature Analysis
-- **`has_logo_catplot.png`**: Analysis of company logo presence in real vs fake job postings
-- **`has_question_catplot.png`**: Distribution of question elements in job descriptions
-- **`telecommuting_catplot.png`**: Remote work mentions analysis across job categories
+
+**Company Logo Analysis**  
+Analysis of company logo presence in real vs fake job postings:
+
+![Has Logo Analysis](Image%20Folder/has_logo_catplot.png)
+
+**Question Elements Analysis**  
+Distribution of question elements in job descriptions:
+
+![Has Question Analysis](Image%20Folder/has_question_catplot.png)
+
+**Remote Work Analysis**  
+Remote work mentions analysis across job categories:
+
+![Telecommuting Analysis](Image%20Folder/telecommuting_catplot.png)
 
 ### Model Development
-- **`data_preparation.png`**: Visual workflow of the data preprocessing pipeline
-- **`hyperparameters.png`**: Results from hyperparameter tuning experiments
-- **`z-test.png`**: Statistical significance testing results
+
+**Data Preparation Workflow**  
+Visual workflow of the data preprocessing pipeline:
+
+![Data Preparation](Image%20Folder/data_preparation.png)
+
+**Hyperparameter Tuning Results**  
+Results from hyperparameter tuning experiments:
+
+![Hyperparameters](Image%20Folder/hyperparameters.png)
+
+**Statistical Significance Testing**  
+Statistical significance testing results:
+
+![Z-Test Results](Image%20Folder/z-test.png)
 
 These visualizations provide insights into:
 - Dataset characteristics and class distribution
