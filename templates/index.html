@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake Job Postings Detection</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px 60px;
+            border-radius: 20px;
+            width: 550px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 180px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            resize: none;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s ease;
+            background: rgba(255, 255, 255, 0.85);
+            color: #333;
+        }
+
+        textarea:focus {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+            background: white;
+        }
+
+        .file-upload {
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 10px;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-input-wrapper:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .file-input-wrapper input[type=file] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-input-label {
+            pointer-events: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        .file-name {
+            font-size: 14px;
+            color: #ddd;
+            margin-top: 5px;
+            max-width: 400px;
+            word-break: break-word;
+        }
+
+        .buttons {
+            margin-top: 18px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        button {
+            background: linear-gradient(90deg, #ff512f, #dd2476);
+            border: none;
+            color: white;
+            padding: 14px 28px;
+            font-size: 17px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.07);
+            background: linear-gradient(90deg, #dd2476, #ff512f);
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .clear-btn {
+            background: linear-gradient(90deg, #4ec885, #c1cc62);
+        }
+
+        .clear-btn:hover {
+            background: linear-gradient(90deg, #c1cc62, #4ec885);
+        }
+
+        .result {
+            margin-top: 25px;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 10px;
+            animation: popIn 0.5s ease;
+        }
+
+        .real {
+            background: rgba(0, 255, 0, 0.2);
+            color: #0f0;
+        }
+
+        .fake {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff4b4b;
+        }
+
+        .loading {
+            background: rgba(255, 255, 0, 0.2);
+            color: #ffeb3b;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.85); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .or-divider {
+            margin: 20px 0;
+            position: relative;
+            text-align: center;
+            font-size: 16px;
+            color: #ddd;
+        }
+
+        .or-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.3);
+            z-index: 1;
+        }
+
+        .or-divider span {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0 15px;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fake Job Postings Detection</h1>
+        <form method="POST" id="jobForm" enctype="multipart/form-data">
+            <textarea name="job_desc" placeholder="Paste job description here...">{{ request.form.get('job_desc', '') }}</textarea>
+            
+            <div class="or-divider">
+                <span>OR</span>
+            </div>
+            
+            <div class="file-upload">
+                <div class="file-input-wrapper">
+                    <input type="file" name="job_image" id="jobImage" accept="image/*,.jpg,.jpeg,.png,.gif,.bmp,.tiff">
+                    <span class="file-input-label">📸 Upload Job Poster</span>
+                </div>
+                <div class="file-name" id="fileName"></div>
+            </div>
+            
+            <div class="buttons">
+                <button type="submit" name="action" value="check">Check</button>
+                <button type="button" class="clear-btn" id="clearBtn">Clear</button>
+            </div>
+
+            <script>
+                // File upload functionality
+                document.getElementById("jobImage").addEventListener("change", function(e) {
+                    const file = e.target.files[0];
+                    const fileNameDiv = document.getElementById("fileName");
+                    
+                    if (file) {
+                        // Check file size (16MB limit)
+                        if (file.size > 16 * 1024 * 1024) {
+                            alert("File size must be less than 16MB");
+                            e.target.value = "";
+                            fileNameDiv.textContent = "";
+                            return;
+                        }
+                        
+                        // Check file type
+                        const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/bmp', 'image/tiff'];
+                        if (!validTypes.includes(file.type)) {
+                            alert("Please select a valid image file (JPEG, PNG, GIF, BMP, TIFF)");
+                            e.target.value = "";
+                            fileNameDiv.textContent = "";
+                            return;
+                        }
+                        
+                        fileNameDiv.textContent = `Selected: ${file.name} (${(file.size / (1024 * 1024)).toFixed(2)} MB)`;
+                        fileNameDiv.style.color = "#4ec885";
+                    } else {
+                        fileNameDiv.textContent = "";
+                    }
+                });
+
+                // Clear button functionality
+                document.getElementById("clearBtn").addEventListener("click", function() {
+                    document.querySelector("textarea[name='job_desc']").value = "";
+                    document.getElementById("jobImage").value = "";
+                    document.getElementById("fileName").textContent = "";
+                    
+                    // Clear prediction text if it's on screen
+                    const resultDiv = document.querySelector(".result");
+                    if (resultDiv) {
+                        resultDiv.remove();
+                    }
+                });
+
+                // Show loading state when form is submitted
+                document.getElementById("jobForm").addEventListener("submit", function(e) {
+                    const textArea = document.querySelector("textarea[name='job_desc']").value.trim();
+                    const fileInput = document.getElementById("jobImage");
+                    const hasFile = fileInput.files && fileInput.files.length > 0;
+                    
+                    console.log("Form submission - Text:", textArea ? "Yes" : "No", "File:", hasFile ? "Yes" : "No");
+                    
+                    // Check if at least one input method is provided
+                    if (!textArea && !hasFile) {
+                        e.preventDefault();
+                        alert("Please either enter job description text or upload an image");
+                        return false;
+                    }
+                    
+                    // Remove existing result and show loading
+                    const existingResult = document.querySelector(".result");
+                    if (existingResult) {
+                        existingResult.remove();
+                    }
+                    
+                    const resultDiv = document.createElement("div");
+                    resultDiv.className = "result loading";
+                    if (hasFile) {
+                        resultDiv.textContent = "🔍 Extracting text from image and analyzing...";
+                    } else {
+                        resultDiv.textContent = "🔍 Analyzing...";
+                    }
+                    document.querySelector(".container").appendChild(resultDiv);
+                });
+
+                // Allow clicking anywhere on the file wrapper to trigger file selection
+                document.querySelector(".file-input-wrapper").addEventListener("click", function(e) {
+                    if (e.target.tagName !== 'INPUT') {
+                        document.getElementById("jobImage").click();
+                    }
+                });
+            </script>
+        </form>
+        {% if prediction %}
+            <div class="result {% if 'Fake' in prediction %}fake{% else %}real{% endif %}">
+                {{ prediction }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
