@@ -153,12 +153,20 @@ ROC-AUC curve demonstrating the model's ability to distinguish between real and 
 **Data Preparation Workflow**  
 Visual workflow of the data preprocessing pipeline:
 
+<div align="center">
+
 ![Data Preparation](Images/data_preparation.png)
+
+</div>
 
 **Hyperparameter Tuning Results**  
 Results from hyperparameter tuning experiments:
 
+<div align="center">
+
 ![Hyperparameters](Images/hyperparameters.png)
+
+</div>
 
 **Statistical Significance Testing**  
 Statistical significance testing results:
