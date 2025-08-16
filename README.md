@@ -133,12 +133,20 @@ The model training process is documented in the Jupyter notebooks:
 **Confusion Matrix**  
 Shows the model's prediction accuracy across true positives, false positives, true negatives, and false negatives:
 
+<div align="center">
+
 ![Confusion Matrix](Images/confusion_matrix_of_optimalmodel.png)
+
+</div>
 
 **ROC-AUC Curve**  
 ROC-AUC curve demonstrating the model's ability to distinguish between real and fake job postings:
 
+<div align="center">
+
 ![AUC Curve](Images/AUC_Curve_of%20ADASYN_TF-IDF.png)
+
+</div>
 
 ### Model Development
 
