@@ -131,9 +131,7 @@ The model training process is documented in the Jupyter notebooks:
 - `EDA.ipynb`: Exploratory data analysis and data visualization
 - `ModelTraining.ipynb`: Model training, evaluation, and hyperparameter tuning
 
-## 📊 Visualizations & Analysis
-
-The `Image Folder/` contains comprehensive visualizations generated during the data analysis and model training process:
+## 📊 Model Performance & Development
 
 ### Model Performance Metrics
 
@@ -146,40 +144,6 @@ Shows the model's prediction accuracy across true positives, false positives, tr
 ROC-AUC curve demonstrating the model's ability to distinguish between real and fake job postings:
 
 ![AUC Curve](Image%20Folder/AUC_Curve_of%20ADASYN_TF-IDF.png)
-
-### Data Analysis Visualizations
-
-**Class Distribution**  
-Illustrates the distribution of real vs fake job postings in the dataset:
-
-![Class Imbalance](Image%20Folder/classimbalance.png)
-
-**Feature Correlation Heatmap**  
-Correlation matrix showing relationships between different features:
-
-![Heatmap](Image%20Folder/heatmap.png)
-
-**Text Feature Frequency Analysis**  
-Analysis of text feature frequencies in job postings:
-
-![Frequency Plot](Image%20Folder/frequency_plot_textfeatures.png)
-
-### Feature Analysis
-
-**Company Logo Analysis**  
-Analysis of company logo presence in real vs fake job postings:
-
-![Has Logo Analysis](Image%20Folder/has_logo_catplot.png)
-
-**Question Elements Analysis**  
-Distribution of question elements in job descriptions:
-
-![Has Question Analysis](Image%20Folder/has_question_catplot.png)
-
-**Remote Work Analysis**  
-Remote work mentions analysis across job categories:
-
-![Telecommuting Analysis](Image%20Folder/telecommuting_catplot.png)
 
 ### Model Development
 
@@ -197,12 +161,6 @@ Results from hyperparameter tuning experiments:
 Statistical significance testing results:
 
 ![Z-Test Results](Image%20Folder/z-test.png)
-
-These visualizations provide insights into:
-- Dataset characteristics and class distribution
-- Feature importance and correlations
-- Model performance and validation metrics
-- Statistical analysis of job posting patterns
 
 ## 🚨 Fake Job Indicators
 
