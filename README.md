@@ -1,12 +1,12 @@
 # 🔍 Fake Job Posting Detection System
 
-A machine learning-powered web application that detects fraudulent job postings using natural language processing and optical character recognition (OCR). The system can analyze both text input and uploaded job posting images to identify potentially fake job Posting Advertisements.
+A machine learning-powered web application that detects fraudulent job postings using natural language processing and optical character recognition (OCR). This data science project can analyze both text input and uploaded job posting images to identify potentially fake job Posting Advertisements.
 
 ## 🌟 Features
 
 - **Text Analysis**: Analyze job descriptions entered manually
 - **Image Processing**: Extract text from job posting images using OCR
-- **Machine Learning Detection**: Uses trained ML model to classify job postings as legitimate or fraudulent
+- **Machine Learning Detection**: Uses trained data science ML model to classify job postings as legitimate or fraudulent
 - **Modern Web Interface**: Beautiful, responsive web UI with gradient backgrounds and animations
 - **Real-time Results**: Instant classification with visual feedback
 - **File Upload Support**: Supports multiple image formats (JPEG, PNG, GIF, BMP, TIFF)
@@ -20,7 +20,7 @@ The application includes sample job postings in the `Job Posters/` directory:
 ## 🛠️ Technology Stack
 
 - **Backend**: Flask (Python web framework)
-- **Machine Learning**: scikit-learn with TF-IDF vectorization
+- **Machine Learning**: scikit-learn with TF-IDF vectorization for data science modeling
 - **OCR**: Tesseract-OCR with pytesseract
 - **Image Processing**: PIL (Python Imaging Library)
 - **Frontend**: HTML, CSS, JavaScript with modern UI design
@@ -78,8 +78,8 @@ Fake Job Posting/
 │   ├── fake_job_postings.csv       # Original dataset
 │   └── clean_df                    # Processed dataset
 ├── Code Library/
-│   ├── EDA.ipynb                   # Exploratory Data Analysis
-│   └── ModelTraining.ipynb         # Model training notebook
+│   ├── EDA.ipynb                   # Exploratory Data Analysis for data science insights
+│   └── ModelTraining.ipynb         # Data science model training notebook
 ├── Job Posters/
 │   ├── Fake_Job1.jpg              # Sample fake job posting
 │   ├── Fake_Job2.jpg              # Sample fake job posting
@@ -114,7 +114,7 @@ Fake Job Posting/
 
 ## 🔬 Model Information
 
-The detection system uses:
+The data science detection system uses:
 - **Algorithm**: Logistic Regression (C=3, solver='liblinear')
 - **Feature Extraction**: TF-IDF (Term Frequency-Inverse Document Frequency) vectorization
 - **Text Processing**: NLTK for natural language processing
@@ -122,9 +122,9 @@ The detection system uses:
 - **Performance**: Trained on a dataset of real and fake job postings
 
 ### Training Process
-The model training process is documented in the Jupyter notebooks:
-- `EDA.ipynb`: Exploratory data analysis and data visualization
-- `ModelTraining.ipynb`: Model training, evaluation, and hyperparameter tuning
+The data science model training process is documented in the Jupyter notebooks:
+- `EDA.ipynb`: Exploratory data analysis and data visualization for data science insights
+- `ModelTraining.ipynb`: Data science model training, evaluation, and hyperparameter tuning
 
 ## 📊 Model Performance & Development
 
@@ -188,7 +188,7 @@ The model looks for common patterns in fraudulent job postings:
 
 ### ✅ Real Job Example
 ```
-We are seeking a Data Analyst to join our analytics team in Bangalore. 
+We are seeking a Data Analyst to join our data science and analytics team in Bangalore. 
 The candidate should have 2-4 years of experience in SQL, Python, and 
 data visualization tools such as Power BI or Tableau. Responsibilities 
 include analyzing data sets, generating reports, and providing actionable 
@@ -221,10 +221,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Dataset sources for training the model
+- Dataset sources for training the data science model
 - Tesseract-OCR community for OCR capabilities
 - Flask community for the web framework
-- scikit-learn developers for machine learning tools
+- scikit-learn developers for machine learning and data science tools
 
 ---
 
